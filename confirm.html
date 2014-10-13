@@ -6,16 +6,23 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style/bootstrap.min.css">
+    <script>
+    function change_pic() {
+        var img = document.findElementById("pic-selfie");
+        img.src = "pic/duck-face.jpg";
+        return;
+    }
+    </script>
 
 </head>
 
 <body ng-controller="outfitCtrl">
 <div class="container">
-<h2>Upload your outfit</h2>
+    <h2>Upload your outfit</h2>
 <p>
 
 </p>
-<img src="pic/selfie.jpg" width="300" height="360">
+<img id="pic-selfie" src="pic/selfie.jpg" width="300" height="360">
 
 <p> 
   <div class="file-upload">
@@ -27,7 +34,7 @@
 </p>
 
 <p>
-<button ng-click="save()">Confirm</button>
+<button onclick="change_pic()" >Confirm</button>
 <a href="index.html"><button ng-click="clear()">Retake</button></a>
 </p>
 

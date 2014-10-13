@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html">
+    <head>
+	    <meta charset="utf-8">
+        <title>Work It</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style/bootstrap.min.css">
+
+    </head>
 
 <body ng-app ng-controller="todoCtrl">
 
-<h2>Choose the outfit that you like!</h2>
+<h2>Choose the outfits that you find most appealing!</h2>
 
 
-<div ng-repeat="x in styleList">
+<div style="display:inline;" ng-repeat="x in styleList">
 	
     <img ng-src="{{ x.styleImage }}" ng-model="test" ng-click="save()" alt="some_text" width="200" height="260">
 <input type="checkbox" ng-hide="myVar" src="{{x.styleImage}}" ng-model="x.chosen"> 
     </div>
-
-<p><button ng-hide="myVar" ng-click="add()">Done</button></p>
+    <br ><br>
+    <div style="width:100%;text-align:center;">
+        <button ng-hide="myVar" ng-click="add()">Done</button>
+        <button ng-show="myVar" onclick="location.href='add.html'">Continue</button>
+    </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 
 <script>
-function todoCtrl($scope) {
+function todoCtrl($scope) 
+{
     $scope.styleList = [
     {styleImage:'pic/formal1.jpg', chosen:false},
     {styleImage:'pic/formal2.jpg', chosen:false},
@@ -37,9 +49,9 @@ function todoCtrl($scope) {
     
     ];
 
-$scope.myVar=false; 
+    $scope.myVar=false; 
     $scope.add = function() {
-    $scope.myVar=!$scope.myVar;
+        $scope.myVar=!$scope.myVar;
         var oldList = $scope.styleList;
         $scope.styleList = [];
         angular.forEach(oldList, function(x) {
