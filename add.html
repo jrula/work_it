@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="outfitApp">
+<head>
+	   <meta charset="utf-8">
+    <title>Work It</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+
+</head>
+
+<body ng-controller="outfitCtrl">
+<div class="container">
+<h2>Upload your outfit</h2>
+<p>
+
+</p>
+<img src="pic/selfie.jpg" width="300" height="360">
+<p> 
+  <div class="file-upload">
+  <div class="file-select">
+ 
+    <input type="file" name="chooseFile" id="chooseFile">
+  </div>
+</div>
+</p>
+
+<p>
+<a href="confirm.html"><button ng-click="save()">Upload</button>
+<button ng-click="clear()">Clear</button>
+</p>
+
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="outfitApp.js"></script>
+<script src="outfitCtrl.js"></script>
+<script src="bindings.js"></script>
+
+</body>
+</html>
